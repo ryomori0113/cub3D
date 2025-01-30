@@ -184,7 +184,7 @@ int main(void)
 	t_player	*player;
 	t_params	params;
 
-	// 構造体の初期化を関数に抽出
+	// 構造体の初期化を関数
 	init_structs(&data, &player, &params);
 	// マップデータの読み込み
 	line_count = 0;

@@ -93,6 +93,22 @@ int allocate_map_memory(char **line, int start_index, int line_count, t_params *
 	return (0);
 }
 
+//==============================================================
+// parse_map_data : check_map
+//==============================================================
+
+int check_map(t_params *params)
+{
+	int i;
+	int j;
+	int k;
+
+	if (params->map[1])
+	{
+		i 
+	}
+}
+
 
 //==============================================================
 // parse_map_data : process_map_line
@@ -137,5 +153,11 @@ int parse_map_data(char **line, int start_index, int line_count, t_params *param
 			return (-1);
 		j++;
 	}
+
+	// mapのエラーチェック
+	 if (check_map(params) != 0)
+	 	return (-1);
+
+
 	return (0);
 }
