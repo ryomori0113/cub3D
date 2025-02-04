@@ -3,7 +3,7 @@ target_dir=".."
 
 cd $target_dir && make re
 
-directory="./maps/ng"
+directory="./maps/NG_MAP"
 
 find "$directory" -type f | sort | while read file; do
     # 各ファイルに対して ./cub3D コマンドを実行
