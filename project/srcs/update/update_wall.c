@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 00:31:06 by yyamasak          #+#    #+#             */
-/*   Updated: 2025/02/05 00:32:34 by yyamasak         ###   ########.fr       */
+/*   Updated: 2025/02/05 22:47:27 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	_wall_assign(t_wall *wall, t_data *data, t_ray *ray, t_player *player)
 	if (wall->draw_end >= data->img.height)
 		wall->draw_end = data->img.height - 1;
 	_set_wall_tex_(&(wall->target_img), ray, data);
-	// TODO start from
 	if (ray->side == 0)
 		wall->wall_x = player->pos.y + ray->perp_wall_dist * ray->ray_dir.y;
 	else
@@ -53,7 +52,6 @@ void	_wall_assign(t_wall *wall, t_data *data, t_ray *ray, t_player *player)
 	if ((ray->side == 0 && ray->ray_dir.x < 0) || (ray->side == 1
 			&& ray->ray_dir.y > 0))
 		wall->tex.x = wall->target_img->width - wall->tex.x - 1;
-	// draw the pixels of the stripe as a vertical line
 	wall->step = 1.0 * wall->target_img->height / wall->line_height;
 	wall->tex_pos = (wall->draw_start - data->img.height / 2 + wall->line_height
 			/ 2) * wall->step;
