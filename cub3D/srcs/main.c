@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 00:54:54 by yyamasak          #+#    #+#             */
-/*   Updated: 2025/02/05 00:55:39 by yyamasak         ###   ########.fr       */
+/*   Updated: 2025/02/06 14:02:24 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,6 @@ int	main_loop(void *arg)
 	return (0);
 }
 
-static int	check_all_set_(t_params *params)
-{
-	if (!params->data.tex_north.path)
-		return (ft_printf_fd(ERR_FD, "Error\n%s%s\n", ERR2, ERR_NOPATH));
-	if (!params->data.tex_south.path)
-		return (ft_printf_fd(ERR_FD, "Error\n%s%s\n", ERR2, ERR_NOPATH));
-	if (!params->data.tex_west.path)
-		return (ft_printf_fd(ERR_FD, "Error\n%s%s\n", ERR2, ERR_NOPATH));
-	if (!params->data.tex_east.path)
-		return (ft_printf_fd(ERR_FD, "Error\n%s%s\n", ERR2, ERR_NOPATH));
-	if (params->data.ceilling_color == -1)
-		return (ft_printf_fd(ERR_FD, "Error\n%s%s\n", ERR2, ERR_NOCOLOR));
-	if (params->data.floor_color == -1)
-		return (ft_printf_fd(ERR_FD, "Error\n%s%s\n", ERR2, ERR_NOCOLOR));
-	if (params->player.init_userpos_x == -1)
-		return (ft_printf_fd(ERR_FD, "Error\n%s%s\n", ERR2, ERR_NOPLAYER));
-	return (0);
-}
 // static void call_struct(t_params *params)
 // {
 // 	printf("mapwidth, mapheight = (%d, %d)\n", params->map_width,
@@ -73,8 +55,6 @@ int	main(int argc, char **argv)
 	if (_init_params(&params))
 		exit(1);
 	if (_parse(argv[1], params))
-		exit(1);
-	if (check_all_set_(params))
 		exit(1);
 	if (_init_data(&(params->data)))
 		exit(1);
