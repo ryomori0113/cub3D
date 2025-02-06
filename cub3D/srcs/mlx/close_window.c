@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 00:48:11 by yyamasak          #+#    #+#             */
-/*   Updated: 2025/02/05 00:48:49 by yyamasak         ###   ########.fr       */
+/*   Updated: 2025/02/06 13:04:19 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	free_maps(t_params *params)
 	free(params->map);
 }
 
-// TODO 時間あったらなおす
 int	_close_window(t_params *param)
 {
 	t_data	*data;

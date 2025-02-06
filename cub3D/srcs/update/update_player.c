@@ -6,13 +6,12 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 00:30:42 by yyamasak          #+#    #+#             */
-/*   Updated: 2025/02/05 00:32:56 by yyamasak         ###   ########.fr       */
+/*   Updated: 2025/02/06 13:04:39 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycast.h"
 
-// TODO なんでこの実装にしたのか（plane計算部分）を調査する
 static void	_update_player_dir_(t_player *player)
 {
 	t_vector	old_dir;
